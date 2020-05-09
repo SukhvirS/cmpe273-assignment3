@@ -1,3 +1,30 @@
+# Question
+Q: What are the best _k_ hashes and _m_ bits values to store one million _n_ keys (E.g. e52f43cd2c23bb2e6296153748382764) suppose we use the same MD5 hash key from [pickle_hash.py](https://github.com/sithu/cmpe273-spring20/blob/master/midterm/pickle_hash.py#L14) and explain why?
+
+A: Given _n_ (1,000,000), we can calculate the value for m using 
+
+```
+m = - (n * log(p)) / (log(2)^2) 
+
+```
+
+where,
+- m = bit array size
+- n = number of expected keys to be stored
+- p = Probability of desired false positive rate (use 0.0000001 in this case)
+
+we get m = 33,547,705. We can now calculate k using
+
+```
+k = math.log(2) * m / n
+```
+
+where,
+- m = bit array size (33,547,705)
+- n = number of expected keys to be stored (1,000,000)
+we get k = 23. So the best values for k and m (given p = 0.0000001 and n = 1,000,000) are k = 23 and m = 33,547,705. These values are best because they provide a balance between filling up the filter too fast and keeping the filter too sparse. Both of which would hurt the performance of the bloom filter.
+
+
 # LRU Cache and Bloom Filter
 
 The assignment 3 is based on our simple [distributed cache](https://github.com/sithu/cmpe273-spring20/tree/master/midterm) where you have implmented the GET and PUT operations.
