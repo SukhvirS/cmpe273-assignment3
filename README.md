@@ -4,7 +4,7 @@ Q: What are the best _k_ hashes and _m_ bits values to store one million _n_ key
 A: Given _n_ (1,000,000), we can calculate the value for m using 
 
 ```
-m = - (n * log(p)) / (log(2)^2) 
+m = - (n * log(p)) / (log(2)^2)
 
 ```
 
@@ -24,6 +24,7 @@ where,
 - n = number of expected keys to be stored (1,000,000)
 we get k = 23. So the best values for k and m (given p = 0.0000001 and n = 1,000,000) are k = 23 and m = 33,547,705. These values are best because they provide a balance between filling up the filter too fast and keeping the filter too sparse. Both of which would hurt the performance of the bloom filter.
 
+# 
 
 # LRU Cache and Bloom Filter
 
