@@ -1,7 +1,6 @@
-# Question
-Q: What are the best _k_ hashes and _m_ bits values to store one million _n_ keys (E.g. e52f43cd2c23bb2e6296153748382764) suppose we use the same MD5 hash key from [pickle_hash.py](https://github.com/sithu/cmpe273-spring20/blob/master/midterm/pickle_hash.py#L14) and explain why?
+# Question: What are the best _k_ hashes and _m_ bits values to store one million _n_ keys (E.g. e52f43cd2c23bb2e6296153748382764) suppose we use the same MD5 hash key from [pickle_hash.py](https://github.com/sithu/cmpe273-spring20/blob/master/midterm/pickle_hash.py#L14) and explain why?
 
-A: Given _n_ (1,000,000), we can calculate the value for m using 
+Answer: Given _n_ (1,000,000), we can calculate the value for m using 
 
 ```
 m = - (n * log(p)) / (log(2)^2)
